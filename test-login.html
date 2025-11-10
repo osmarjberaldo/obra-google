@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste de Login</title>
+</head>
+<body>
+    <h1>Teste de Login</h1>
+    <button onclick="testLogin()">Testar Login</button>
+    <div id="result"></div>
+
+    <script>
+        async function testLogin() {
+            const url = 'appfacil/login.php';
+            const data = {
+                email: 'test@test.com.br',
+                password: 'Test362514*'
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+                console.log('Resposta:', result);
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('result').innerHTML = '<p>Erro: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>
