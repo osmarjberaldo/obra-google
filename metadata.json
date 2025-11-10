@@ -1,0 +1,5 @@
+{
+  "name": "Gestão de Obra Fácil",
+  "description": "A web application for easy construction management, featuring project overviews, daily reports, and budgeting tools. The application supports multiple languages and provides a clean, modern interface for managing construction projects efficiently.",
+  "requestFramePermissions": []
+}
